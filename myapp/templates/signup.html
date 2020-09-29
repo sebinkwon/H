@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method = 'POST' action = ' {% url "signup" %} '>
+        {% csrf_token %}
+        <input type = 'text' name = 'username' placeholder="아이디">
+        <input type = 'password' name = 'password1' placeholder="비밀번호">
+        <input type = 'password' name = 'password2' placeholder="비밀번호확인">
+        <input type = 'text' name = 'address' placeholder="주소">
+        <input type = 'text' name = 'phone' placeholder="전화번호">
+        <input type = 'date' name = 'birth' placeholder="생년월일">
+        <input type = 'text' name = 'age' placeholder="나이">
+        성별 :
+        남<input type = 'radio' name = 'gender' placeholder="성별" value = '남'>
+        여<input type = 'radio' name = 'gender' placeholder="성별" value = '여'>
+        <button type = 'submit'>회원 가입</button>
+    </form>
+<p style = "color:red;">{{ error }}</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인덱스</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+    {{request.user}}
+    {% for CustomUser in posts%}
+    <p>{{CustomUser.address}}</p>
+    <p>{{CustomUser.phone}}</p>
+    <p>{{CustomUser.birth}}</p>
+    <p>{{CustomUser.gender}}</p>
+    <p>{{CustomUser.age}}</p>
+    {% endfor %}
+    <p>로그인완료!</p>
+    <p><a href="{% url 'logout' %}">로그아웃</a></p>
+    {% else %}
+    <p><a href="{% url 'login' %}">로그인</a></p>
+    <p><a href="{% url 'signup' %}">회원가입</a></p>
+    {% endif %}
+    
+</body>
+</html>
